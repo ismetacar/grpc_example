@@ -1,0 +1,22 @@
+syntax = "proto3"; //Specify proto3 version.
+
+package eligible_work; //Optional: unique package name.
+
+//Service. define the methods that the grpc server can expose to the client.
+service EligibleCandidateForWorkService {
+  rpc EligibleForWork (Candidate) returns (WorkEligibility);
+}
+
+message Candidate {
+  int32 candidate_id = 1;
+  string name = 2;
+  string position = 3;
+  repeated string skills = 4;
+}
+
+message WorkEligibility {
+  bool eligible = 1;
+  string name = 2;
+  string position = 3;
+  int32 total_score = 4;
+}
