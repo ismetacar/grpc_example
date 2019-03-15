@@ -33,7 +33,7 @@ const candidates = {
   }
 }
 
-client.eligibleForWork(candidates.candidate_3, (error, response) => {
+client.eligibleForWork(candidates.candidate_4, (error, response) => {
   if (!error) {
     if (response.eligible) {
         console.log(response);
